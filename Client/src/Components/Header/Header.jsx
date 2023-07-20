@@ -5,7 +5,6 @@ import FlipKartLogo from './Images/flipkart.png'
 import PlusLogo from './Images/plus.png'
 import SearchBar from './SearchBar'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import SubNavBar from './SubNavBar'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const Header = () => {
@@ -43,12 +42,6 @@ const Header = () => {
 
           </Toolbar>
 
-          <ImageContainer>
-            <Toolbar>
-              <SubNavBar />
-            </Toolbar>
-          </ImageContainer>
-
         </AppBarContainer>
 
       </MainContainer>
@@ -58,12 +51,10 @@ const Header = () => {
 }
 
 const MainContainer = styled(Box)`
-position : relative;
+
 `
 
 const AppBarContainer = styled(AppBar)`
-position : fixed;
-z-index : 1;
 margin : 0;
 height : 55px;
 background : #2874F0;
@@ -108,12 +99,4 @@ cursor : pointer;
 }
 `
 
-const ImageContainer = styled(Box)`
-background : white;
-box-shadow: 90px 20px 100px grey;
-height : 30vh;
-color : black;
-margin-top : 7px;
-width : 100%;
-`
 export default Header
