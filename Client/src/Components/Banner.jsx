@@ -27,14 +27,14 @@ const Banner = () => {
     <Container>
 
       <Carousel
-        swipeable={false}
-        draggable={false}
-        responsive={responsive}
-        infinite={true}
-        autoPlay={true}
+        swipeable={false}    // disables the ability to swipe through the carousel items.
+        draggable={false}    // disables dragging the carousel items.
+        responsive={responsive}   // defines how the carousel responds to different screen sizes.
+        infinite={true}  // enables infinite looping of carousel items,
+        autoPlay={true}  // enables automatic play of the carousel items.
         autoPlaySpeed={4000}
-        keyBoardControl={true}
-        showDots={false}
+        keyBoardControl={true}  // enables control of the carousel using keyboard arrow keys.
+        showDots={false}   // whether to display pagination dots at the bottom of the carousel 
         slidesToSlide={1}
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
@@ -64,7 +64,7 @@ margin-top : 1rem;
 
 const Image = styled('img')(({ theme }) => ({
   width: '100%',
-  height: '100%',
+  height: '45vh',
   objectFit: 'cover'
 }));
 
