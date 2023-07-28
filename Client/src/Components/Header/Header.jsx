@@ -6,13 +6,23 @@ import PlusLogo from './Images/plus.png'
 import SearchBar from './SearchBar'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useState } from 'react'
+
 
 const Header = () => {
+
+  const [open, setOpen] = useState("false");
+
+  const openDbox = () => {
+    setOpen(true)
+  }
+
   return (
 
     <>
 
       <MainContainer>
+
         <AppBarContainer>
 
           <Toolbar variant="dense">
@@ -27,7 +37,9 @@ const Header = () => {
 
             <SearchBar />
 
-            <ButtonContainer variant='contained' size='small'>LogIn</ButtonContainer>
+
+            <ButtonContainer variant='contained' onClick={() => openDbox()}>LogIn
+            </ButtonContainer>
 
             <Container>
               <Typography>Become a Seller</Typography>
@@ -35,7 +47,7 @@ const Header = () => {
               <ArrowDropDownIcon sx={{ marginTop: '1px' }} />
             </Container>
 
-            <Box sx={{ display: 'flex', margin: '5px 0 0 40px', cursor: 'pointer' }}>
+            <Box sx={{ display: 'flex', margin: '5px 0 0 20px', cursor: 'pointer' }}>
               <ShoppingCartIcon variant='contained' size='small' />
               <Typography sx={{ fontFamily: "Trebuchet MS" }}>Cart</Typography>
             </Box>
@@ -77,13 +89,14 @@ cursor : pointer;
 `
 
 const ButtonContainer = styled(Button)`
-font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-background : whitesmoke;
+background : #FFFFFF;
 color : #2874f0;
-margin : 6px 0 0 20px;
+text-transform : none;
+margin : 6px 0 0 25px;
 width : 9vw;
 height : 5.5vh;
-border-radius : none;
+border-radius : 2px;
+box-shadow : none;
 font-weight : bold;
 cursor : pointer;
 `
@@ -95,7 +108,7 @@ cursor : pointer;
 
 & > p{
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  margin-left : 40px;
+  margin-left : 30px;
 }
 `
 

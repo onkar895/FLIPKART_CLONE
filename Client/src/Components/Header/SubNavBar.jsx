@@ -35,7 +35,7 @@ width : 100%;
 background : white;
 padding : 15px 0 15px 30px;
 margin-top : 3.4rem;
-box-shadow : 0 0 5px 0;
+box-shadow : 0 0 2px 0;
 gap : 3.3rem;
 
 

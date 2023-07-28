@@ -32,7 +32,7 @@ const Banner = () => {
         responsive={responsive}   // defines how the carousel responds to different screen sizes.
         infinite={true}  // enables infinite looping of carousel items,
         autoPlay={true}  // enables automatic play of the carousel items.
-        autoPlaySpeed={4000}
+        autoPlaySpeed={2000}
         keyBoardControl={true}  // enables control of the carousel using keyboard arrow keys.
         showDots={false}   // whether to display pagination dots at the bottom of the carousel 
         slidesToSlide={1}
@@ -59,7 +59,7 @@ const Banner = () => {
 }
 
 const Container = styled(Box)`
-margin-top : 1rem;
+padding : 8px;
 `
 
 const Image = styled('img')(({ theme }) => ({

@@ -24,7 +24,7 @@ const Search = () => {
 
 const SearchContainer = styled(Box)`
 background : white;
-width : 30%;
+width : 32%;
 height : 72%;
 margin-left : 15px;
 border-radius : 2px;
@@ -35,21 +35,20 @@ margin-top : 5px;
 
 const SearchIconWrapper = styled(Box)`
   color : #2874f0;
-  position: 'absolute',
   display: 'flex',
   align-items: 'center',
   justify-content: 'center',
   width : 20px;
   height : 20px;
-  margin-left : 9rem;
+  margin-right : 10px;
 
 `
-
 const StyledInputBase = styled(InputBase)`
 color : black;
-font-size : 14px;
+font-size : 12px;
 margin-left : 16px;
-
+width : 100%;
+margin-top : 3px;
 `
 
 export default Search
