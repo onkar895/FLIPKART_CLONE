@@ -2,7 +2,6 @@
     "scripts": {
         "start": "nodemon index.js"
     },
-    "type": "module",
     "dependencies": {
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
@@ -13,6 +12,7 @@
     "name": "server",
     "version": "1.0.0",
     "main": "index.js",
+    "type": "module",
     "devDependencies": {},
     "author": "",
     "license": "ISC",
