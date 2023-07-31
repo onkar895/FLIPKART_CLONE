@@ -7,13 +7,14 @@ import SearchBar from './SearchBar'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useState } from 'react'
+import LoginDialog from '../Login/LoginDialog'
 
 
 const Header = () => {
 
-  const [open, setOpen] = useState("false");
+  const [open, setOpen] = useState(false);
 
-  const openDbox = () => {
+  const openDialog = () => {
     setOpen(true)
   }
 
@@ -21,24 +22,23 @@ const Header = () => {
 
     <>
 
-      <MainContainer>
+      <AppBarContainer>
 
-        <AppBarContainer>
+        <Toolbar variant="dense">
 
-          <Toolbar variant="dense">
+          <LogoBox>
+            <img src={FlipKartLogo} alt="FlipKartLogo" />
+            <SubLogo>Explore
+              <Box sx={{ color: '#E8D919', fontWeight: 'bold', marginLeft: '2px' }}>Plus</Box>
+              <Box><img src={PlusLogo} alt="PlusLogo" style={{ width: '10px', marginBottom: '2px' }} /></Box>
+            </SubLogo>
+          </LogoBox>
 
-            <LogoBox>
-              <img src={FlipKartLogo} alt="FlipKartLogo" />
-              <SubLogo>Explore
-                <Box sx={{ color: '#E8D919', fontWeight: 'bold', marginLeft: '2px' }}>Plus</Box>
-                <Box><img src={PlusLogo} alt="PlusLogo" style={{ width: '10px', marginBottom: '2px' }} /></Box>
-              </SubLogo>
-            </LogoBox>
+          <SearchBar />
 
-            <SearchBar />
+          <Wrapper>
 
-
-            <ButtonContainer variant='contained' onClick={() => openDbox()}>LogIn
+            <ButtonContainer variant='contained' onClick={() => openDialog()}>Login
             </ButtonContainer>
 
             <Container>
@@ -52,19 +52,18 @@ const Header = () => {
               <Typography sx={{ fontFamily: "Trebuchet MS" }}>Cart</Typography>
             </Box>
 
-          </Toolbar>
+            <LoginDialog open={open} setOpen={setOpen} />
 
-        </AppBarContainer>
+          </Wrapper>
 
-      </MainContainer>
+        </Toolbar>
+
+      </AppBarContainer>
 
     </>
   )
 }
 
-const MainContainer = styled(Box)`
-
-`
 
 const AppBarContainer = styled(AppBar)`
 margin : 0;
@@ -88,6 +87,11 @@ font-style : italic;
 cursor : pointer;
 `
 
+const Wrapper = styled(Box)`
+display : flex;
+align-items : center;
+`
+
 const ButtonContainer = styled(Button)`
 background : #FFFFFF;
 color : #2874f0;
@@ -99,6 +103,11 @@ border-radius : 2px;
 box-shadow : none;
 font-weight : bold;
 cursor : pointer;
+
+:hover {
+  background : #FFFFFF;
+  color : #2874f0;
+}
 `
 
 const Container = styled(Box)`
@@ -111,5 +120,7 @@ cursor : pointer;
   margin-left : 30px;
 }
 `
+
+
 
 export default Header
